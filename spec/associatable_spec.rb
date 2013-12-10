@@ -24,9 +24,10 @@ describe "associatable" do
       has_many :cats, :foreign_key => :owner_id
       belongs_to :house
     end
-
+    
     class House < SQLObject
       set_table_name("houses")
+      my_attr_accessor(:id, :address, :house_id)
       my_attr_accessible(:id, :address, :house_id)
     end
   end
