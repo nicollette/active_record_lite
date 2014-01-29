@@ -1,12 +1,21 @@
+Active Record Lite
+==================
 
-# Testing
+Re-created Active Record's basic components: attr_accessor, mass_assignment, associations, and SQL queries. 
 
-This repo contains code for you to test your solution two different ways. One is
-to use RSpec and the other is to run ad-hoc tests with ruby code written for you.
+Highlights
+==========
 
-To run the specs simply run `rspec spec/mass_object_spec.rb`
+*   [https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/mass_object.rb](https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/mass_object.rb)
 
-To run the ad-hoc tests simply run `ruby test/ruby_mass_object_test.rb`
+    *   attr_accessor: Used metaprogramming to get and set variables
+    *   mass_assignment
 
-These specs are to act as a basic guide to show you how one would use the
-framework you're building.
+*   [https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/sql_object.rb](https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/sql_object.rb)
+    *   SQL queries: Re-created ::all, ::find, #insert, #update, #save methods with custom SQL queries.
+
+*   [https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/searchable.rb](https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/searchable.rb)
+    *   Re-created #where with custom SQL query.
+    
+*   [https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/associatable.rb](https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/associatable.rb)
+    *   Used metaprogramming to recreate Active Record's associations: belongs_to, has_many, has_one.

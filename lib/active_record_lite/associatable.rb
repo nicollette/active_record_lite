@@ -37,10 +37,6 @@ class BelongsToAssocParams < AssocParams
   def other_class_name
     self.params[:class_name]
   end
-  
-  def type
-  
-  end
 end
 
 class HasManyAssocParams < AssocParams
@@ -127,16 +123,14 @@ module Associatable #SQLObject will extend this module
   def has_one_through(name, assoc1, assoc2)
     
     define_method(assoc2) do 
-      assoc1_params = self.class.assoc_params[assoc1] #human assoc object
-      assoc2_params = assoc1_params.other_class.assoc_params[assoc2] #house assoc object
-
-      #humans.house_id = houses.id
+      assoc1_params = self.class.assoc_params[assoc1]
+      assoc2_params = assoc1_params.other_class.assoc_params[assoc2]
+      
       join_clause = 
         "#{assoc1_params.other_table_name}.#{assoc2_params.foreign_key}" +
           " = #{assoc2_params.other_table_name}.#{assoc2_params.primary_key}"
        puts "JOIN CLAUSE: #{join_clause}"
    
-     #humans.id = cats.owner_id  "#{other_table}.#{settings.primary_key} = ?"
       where_clause = 
         "#{assoc1_params.other_table_name}.#{assoc1_params.primary_key} = ?"
       foreign_key_value = self.send("#{assoc1_params.foreign_key}")
