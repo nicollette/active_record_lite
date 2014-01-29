@@ -15,7 +15,7 @@ Highlights
     *   SQL queries: Re-created ::all, ::find, #insert, #update, #save methods with custom SQL queries.
 
 *   [https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/searchable.rb](https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/searchable.rb)
-    *   Re-created #where with custom SQL query.
+    *   Re-created #where with SQL query.
     
 *   [https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/associatable.rb](https://github.com/nicollette/active_record_lite/blob/master/lib/active_record_lite/associatable.rb)
-    *   Used metaprogramming to recreate Active Record's associations: belongs_to, has_many, has_one.
+    *   Used metaprogramming and SQL queries to recreate Active Record's associations: belongs_to, has_many, has_one_through.
